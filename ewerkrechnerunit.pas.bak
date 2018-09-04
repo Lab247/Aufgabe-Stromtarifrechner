@@ -46,17 +46,68 @@ begin
 end;
 
 procedure TForm1.cmdCalcClick(Sender: TObject);
-var raeume, verbrauch, error :longint;
+var raeume, verbrauch, error1, error2 :longint;
 var KostenA, KostenB, KostenC : real;
 
 begin
-  raeume := StrToInt(txtRooms.Text);
-    val(txtRooms.Text, raeume, error);
+  //raeume := StrToInt(txtRooms.Text);
+  val(txtRooms.Text, raeume, error1);
+  val(txtConsumtion.Text, verbrauch, error2);
 
-  If raeume > 2 Then
-  KostenA := 7.30 + ((raeume -2)*1.85) + verbrauch * 0.21;
+  if (error1 <> 0) or (error1 <> 0) then
+    begin
+      pnlTarifA.Visible := False;
+      pnlTarifB.Visible := False;
+      pnlTarifC.Visible := False;
+    end
+  else
+      begin
+        if raeume > 2 Then
+             begin
+                  KostenA := 7.30 + ((raeume -2)*1.85) + verbrauch * 0.21;
+                  KostenB := 12.80 + ((raeume -2)*2.55) + verbrauch * 0.17;
+             end
+         else
+             begin
+                  KostenA := 7.20  + verbrauch * 0.21;
+                  KostenB := 12.80  + verbrauch * 0.17;
+             end;
+         KostenC := verbrauch * 0.83;
 
-end;
+         If KostenA < KostenB Then
+             Begin
+                  If KostenA < KostenC Then
+                      begin
+                           pnlTarifA.Visible := True;
+                           pnlTarifB.Visible := False;
+                           pnlTarifC.Visible := False;
+                      end
+                  else
+                      begin
+                           pnlTarifA.Visible := False;
+                           pnlTarifB.Visible := False;
+                           pnlTarifC.Visible := True;
+                      end;
+             end
+         Else
+             Begin
+                  if KostenB < KostenC Then
+                      begin
+                           pnlTarifA.Visible := False;
+                           pnlTarifB.Visible := True;
+                           pnlTarifC.Visible := False;
+                      end
+                  else
+                      begin
+                           pnlTarifA.Visible := False;
+                           pnlTarifB.Visible := False;
+                           pnlTarifC.Visible := True;
+                      end;
+             end;
+      end;
+  end;
 
 end.
+
+edt
 

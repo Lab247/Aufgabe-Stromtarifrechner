@@ -1,7 +1,7 @@
 object Form1: TForm1
-  Left = 427
+  Left = 256
   Height = 415
-  Top = 138
+  Top = 132
   Width = 372
   Caption = 'E-Werk Tarifrechner'
   ClientHeight = 415
