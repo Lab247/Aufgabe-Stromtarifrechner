@@ -1,0 +1,132 @@
+object frmMain: TfrmMain
+  Left = 282
+  Height = 342
+  Top = 123
+  Width = 320
+  Caption = 'E-Werk Tarifrechner'
+  ClientHeight = 342
+  ClientWidth = 320
+  LCLVersion = '1.6.0.4'
+  object pnlHeader: TPanel
+    Left = 10
+    Height = 39
+    Top = 9
+    Width = 296
+    Caption = 'Tarifvergleich'
+    Color = clMenuHighlight
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clWhite
+    Font.Height = -21
+    Font.Name = '@Arial Unicode MS'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentColor = False
+    ParentFont = False
+    TabOrder = 0
+  end
+  object edtRooms: TEdit
+    Left = 10
+    Height = 23
+    Top = 92
+    Width = 86
+    TabOrder = 1
+  end
+  object lblRooms: TLabel
+    Left = 10
+    Height = 15
+    Top = 72
+    Width = 76
+    Caption = 'Anzahl Räume'
+    ParentColor = False
+  end
+  object edtkWh: TEdit
+    Left = 120
+    Height = 23
+    Top = 92
+    Width = 96
+    TabOrder = 2
+  end
+  object lblkWh: TLabel
+    Left = 120
+    Height = 15
+    Top = 72
+    Width = 102
+    Caption = 'Verbrauch /a [kWh]'
+    ParentColor = False
+  end
+  object btnBerechnen: TButton
+    Left = 10
+    Height = 35
+    Top = 124
+    Width = 296
+    Caption = 'Berechnen'
+    OnClick = btnBerechnenClick
+    TabOrder = 3
+  end
+  object pnlTarifA: TPanel
+    Left = 16
+    Height = 90
+    Top = 168
+    Width = 90
+    Caption = 'Tarif A'
+    Color = clLime
+    ParentColor = False
+    TabOrder = 4
+    Visible = False
+  end
+  object pnlTarifB: TPanel
+    Left = 110
+    Height = 90
+    Top = 168
+    Width = 90
+    Caption = 'Tarif B'
+    Color = clLime
+    ParentColor = False
+    TabOrder = 5
+    Visible = False
+  end
+  object pnlTarifC: TPanel
+    Left = 206
+    Height = 90
+    Top = 168
+    Width = 90
+    Caption = 'Tarif C'
+    Color = clLime
+    ParentColor = False
+    TabOrder = 6
+    Visible = False
+  end
+  object edtKostenA: TEdit
+    Left = 16
+    Height = 23
+    Top = 263
+    Width = 90
+    TabOrder = 7
+    Visible = False
+  end
+  object edtKostenB: TEdit
+    Left = 112
+    Height = 23
+    Top = 263
+    Width = 90
+    TabOrder = 8
+    Visible = False
+  end
+  object edtKostenC: TEdit
+    Left = 206
+    Height = 23
+    Top = 263
+    Width = 90
+    TabOrder = 9
+    Visible = False
+  end
+  object btnClose: TButton
+    Left = 207
+    Height = 26
+    Top = 300
+    Width = 89
+    Caption = 'Beenden'
+    OnClick = btnCloseClick
+    TabOrder = 10
+  end
+end
